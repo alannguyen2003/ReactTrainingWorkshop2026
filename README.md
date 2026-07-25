@@ -121,18 +121,13 @@ pnpm dev
 
 ### Functional
 
-- Product listing page
-- Product details page
-- Product search
-- Shopping cart
-- Add product to cart
-- Update product quantity
-- Remove product from cart
-- Checkout form
-- Contact form
-- Loading states
-- Empty states
-- Error states
+- Home page
+- Product detail page
+- Shop page
+- Cart page
+- Contact page
+- About page
+- Checkout page
 
 ### UI
 
@@ -153,3 +148,7 @@ pnpm build
 ### Testing
 
 - Minimum **70%** unit test coverage
+
+### Deploy
+
+- Deploy to Vercel or another hosting platform if needed. (option)
