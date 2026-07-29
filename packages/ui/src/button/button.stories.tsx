@@ -1,5 +1,4 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
-import "../styles.css";
 import { Button } from "./button";
 
 const meta: Meta<typeof Button> = {
@@ -28,7 +27,7 @@ export const Primary: Story = {};
 export const Secondary: Story = {
   args: {
     variant: "secondary",
-    children: "View Details",
+    children: "View Details"
   },
 };
 
@@ -42,7 +41,6 @@ export const Ghost: Story = {
 export const ProductDetailAction: Story = {
   args: {
     variant: "outline",
-    size: "lg",
     children: "Add To Cart",
   },
 };
@@ -50,10 +48,10 @@ export const ProductDetailAction: Story = {
 export const ProductDetailPair: Story = {
   render: () => (
     <div className="flex flex-wrap items-center gap-4">
-      <Button size="lg" variant="outline">
+      <Button variant="outline">
         Add To Cart
       </Button>
-      <Button size="lg" variant="outline">
+      <Button variant="outline">
         + Compare
       </Button>
     </div>
@@ -69,7 +67,6 @@ export const Loading: Story = {
 
 export const Large: Story = {
   args: {
-    size: "lg",
     children: "Shop Now",
   },
 };

@@ -4,6 +4,6 @@
     "rootDir": ".",
     "types": ["react", "react-dom"]
   },
-  "include": ["src", ".storybook"],
+  "include": ["src", ".storybook", "src/global.d.ts"],
   "exclude": ["dist", "node_modules", "storybook-static"]
 }

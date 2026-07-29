@@ -32,5 +32,8 @@
     "tsup": "catalog:",
     "typescript": "catalog:",
     "vite": "catalog:"
+  },
+  "dependencies": {
+    "@vitejs/plugin-react": "catalog:"
   }
 }

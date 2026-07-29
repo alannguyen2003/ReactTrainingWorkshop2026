@@ -1,5 +1,4 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
-import "../styles.css";
 import { Field, FieldError, Input, Label } from "./input";
 
 const meta = {

@@ -1,6 +1,5 @@
 import type { ButtonHTMLAttributes } from "react";
 import { cn } from "../utils";
-
 export type ButtonSize = "sm" | "md" | "lg";
 export type ButtonVariant = "primary" | "secondary" | "ghost" | "danger" | "outline";
 
