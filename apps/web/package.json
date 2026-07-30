@@ -27,6 +27,7 @@
   "devDependencies": {
     "@react-workshop/eslint-config": "workspace:*",
     "@react-workshop/tsconfig": "workspace:*",
+    "@react-workshop/ui": "workspace:*",
     "@tailwindcss/vite": "catalog:",
     "@types/node": "catalog:",
     "@types/react": "catalog:",
