@@ -35,7 +35,7 @@ export const Primary: Story = {
                 <PaginationLink
                     isActive={false}
                     href="/demo">3</PaginationLink>
-                <PaginationLink
+                <PaginationLink 
                     isActive={false}
                     href="/demo">Next</PaginationLink>
             </>

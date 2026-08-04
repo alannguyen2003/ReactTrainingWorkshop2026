@@ -25,6 +25,7 @@ function PaginationLink({
     return (
         <a
             className={cn("grid min-h-[60px] min-w-[60px] place-items-center rounded-[10px] px-5 text-xl font-normal", 
+                        "hover:bg-[#b88e2f] hover:text-white",
                 isActive ? "bg-[#b88e2f] text-white" : "bg-[#F9F1E7] text-black",
                 className)}
             data-active={isActive}

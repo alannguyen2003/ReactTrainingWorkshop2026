@@ -5,6 +5,9 @@
     "paths": {
       "@react-workshop/http-client": ["../../packages/http-client/src/index.ts"],
       "@react-workshop/ui/button": ["../../packages/ui/src/button/button.tsx"],
+      "@react-workshop/ui/pagination": ["../../packages/ui/src/pagination/pagination.tsx"],
+      "@react-workshop/ui/product-detail": ["../../packages/ui/src/product-detail/product-detail.tsx"],
+      "@react-workshop/ui/product-image": ["../../packages/ui/src/product-image/product-image.tsx"],
       "@react-workshop/ui/card": ["../../packages/ui/src/card/card.tsx"],
       "@react-workshop/ui/input": ["../../packages/ui/src/input/input.tsx"],
       "@react-workshop/ui/styles.css": ["../../packages/ui/src/styles.css"]

@@ -24,6 +24,18 @@ export default defineConfig({
         replacement: resolve(__dirname, "../../packages/ui/src/input/input.tsx")
       },
       {
+        find: "@react-workshop/ui/pagination",
+        replacement: resolve(__dirname, "../../packages/ui/src/pagination/pagination.tsx")
+      },
+      {
+        find: "@react-workshop/ui/product-detail",
+        replacement: resolve(__dirname, "../../packages/ui/src/product-detail/product-detail.tsx")
+      },
+      {
+        find: "@react-workshop/ui/product-image",
+        replacement: resolve(__dirname, "../../packages/ui/src/product-image/product-image.tsx")
+      },
+      {
         find: "@react-workshop/http-client",
         replacement: resolve(__dirname, "../../packages/http-client/src/index.ts")
       }

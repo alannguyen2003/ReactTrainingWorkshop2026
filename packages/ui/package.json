@@ -34,6 +34,7 @@
     "vite": "catalog:"
   },
   "dependencies": {
-    "@vitejs/plugin-react": "catalog:"
+    "@vitejs/plugin-react": "catalog:",
+    "class-variance-authority": "^0.7.1"
   }
 }

@@ -5,7 +5,6 @@ import { PublicLayout } from "./layouts/PublicLayout";
 
 const queryClient = new QueryClient(); 
 
-
 export function App() {
 
   return (
@@ -16,6 +15,14 @@ export function App() {
             <Route
               path={publicRoutes.home.path} 
               element={publicRoutes.home.element}
+            />
+            <Route
+              path={publicRoutes.shop.path} 
+              element={publicRoutes.shop.element}
+            />
+            <Route
+              path={publicRoutes.productDetail.path} 
+              element={publicRoutes.productDetail.element}
             />
           </Route>
 

@@ -23,7 +23,7 @@ const meta: Meta<typeof Card> = {
                 <CardImage href="/hehe" title="Demo"
                     content="../../public/images/product/product-01.png"
                     >
-                    <CardBadge isNew={false}
+                    <CardBadge type="Sale"
                         content="-30%"/>
                 </CardImage>
                 
