@@ -6,6 +6,7 @@ on:
       - main
       - develop
       - feature/**
+  pull_request:
 
 jobs:
   test:
@@ -23,21 +24,33 @@ jobs:
 
       - uses: actions/setup-node@v4
         with:
-          node-version: 22
+          node-version: 24
           cache: pnpm
 
-      - run: pnpm install --frozen-lockfile
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Lint
+        run: pnpm lint
+
+      - name: Type check
+        run: pnpm typecheck
+
+      - name: Build
+        run: pnpm build
 
       - name: Run tests
         run: pnpm test:coverage
 
       - name: Upload Coverage
+        if: always()
         uses: actions/upload-artifact@v4
         with:
           name: coverage
           path: coverage
 
       - name: Upload JUnit Report
+        if: always()
         uses: actions/upload-artifact@v4
         with:
           name: junit-report
