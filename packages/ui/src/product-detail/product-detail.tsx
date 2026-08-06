@@ -1,20 +1,20 @@
+import { useState } from "react";
 import { StarRating } from "../star-rating/star-rating";
-import { ProductDetailMetaProps, ProductDetailPriceProps, ProductDetailReviewProps, ProductDetailTitleProps } from "./product-detail.types";
+import { cn } from "../utils";
+import { ProductDetailColorProps, ProductDetailDescriptionProps, ProductDetailMetaProps, ProductDetailPriceProps, ProductDetailProps, ProductDetailReviewProps, ProductDetailSizeProps, ProductDetailTitleProps, ProductDetailVariantProps } from "./product-detail.types";
 
-export function ProductDetail() {
+export function ProductDetail({
+    ...productDetail
+}: Readonly<ProductDetailProps>) {
     return (
         <div>
-            <ProductTitle title="demo" />
-            <ProductPrice price={30000}/>
-            <ProductReview reviewValue={3.3} numberOfReviews={1} />
-            <ProductDescription />
-            <ProductVariant />
+            <ProductTitle title={productDetail.title} />
+            <ProductPrice price={productDetail.price} />
+            <ProductReview reviewValue={productDetail.reviewValue} numberOfReviews={productDetail.numberOfReviews} />
+            <ProductDescription description={productDetail.description} />
+            <ProductVariant colors={productDetail.colors} sizes={productDetail.sizes} />
             <ProductFunction />
-            <ProductMeta sku="SS001" category="Sofas" tags={[
-                "Shop",
-                "Demo",
-                "Demo nè"
-            ]}/>
+            <ProductMeta sku={productDetail.sku} category={productDetail.category} tags={productDetail.tags} />
         </div>
     );
 }
@@ -53,33 +53,56 @@ export function ProductReview({
     );
 }
 
-export function ProductDescription() {
+export function ProductDescription({
+    description
+}: Readonly<ProductDetailDescriptionProps>) {
     return (
         <p className="mt-5 max-w-[424px] text-sm leading-6">
-            Setting the bar as one of the most comfortable pieces in its
-            className, this compact sofa has a balanced profile and a warm
-            living-room presence.
+            {description}
         </p>
     );
 }
 
-export function ProductVariant() {
+export function ProductVariant({
+    colors,
+    sizes
+}: Readonly<ProductDetailVariantProps>) {
+    const [colorSelected, setColorSelected] = useState<ProductDetailColorProps | undefined>(colors.find((item) => item.selected));
+    const [sizeSelected, setSizeSelected] = useState<ProductDetailSizeProps | undefined>(sizes.find((item) => item.selected));
+    
+    const changeColor = (color: string) => {
+        setColorSelected(colors.find((item) => item.value === color));
+    } 
+
+    const changeSize = (size: string) => {
+        setSizeSelected(sizes.find((item) => item.label === size));
+    }
+    
     return (
         <>
             <div className="mt-6">
                 <p className="mb-3 text-sm text-muted">Size</p>
                 <div className="flex gap-4">
-                    <button className="h-7 w-7 rounded bg-[#b88e2f] text-white">L</button>
-                    <button className="h-7 w-7 rounded bg-[#f9f1e7]">XL</button>
-                    <button className="h-7 w-7 rounded bg-[#f9f1e7]">XS</button>
+                    {sizes.map((item) => (
+                        <button type="button" key={item.label}
+                            className={cn("h-7 w-7 rounded",
+                                item.label === sizeSelected?.label ? "bg-[#b88e2f] text-white" : "bg-[#f9f1e7]"
+                            )}
+                            onClick={() => changeSize(item.label)}
+                            >{item.label}</button>
+                    ))}
                 </div>
             </div>
             <div className="mt-5">
                 <p className="mb-3 text-sm text-muted">Color</p>
                 <div className="flex gap-4">
-                    <span className="h-7 w-7 rounded-full bg-[#816dfa]"></span>
-                    <span className="h-7 w-7 rounded-full bg-black"></span>
-                    <span className="h-7 w-7 rounded-full bg-[#b88e2f]"></span>
+                    {colors.map((item) => (
+                        <button key={item.value} type="button" onClick={() => changeColor(item.value)}
+                            className={cn(`h-7 w-7 rounded-full bg-[${item.value}]`,
+                                item.value === colorSelected?.value ? "ring-2 ring-black" : ""
+                            )}>
+                        </button>
+                    ))}
                 </div>
             </div>
         </>
@@ -119,8 +142,8 @@ export function ProductMeta({
             <p className="col-span-2">: {tags.join(", ")}</p>
             <p>Share     </p>
             <div className="flex gap-4 col-span-2 items-center">:<svg fill="#000000" className="w-5 h-5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M12 2.03998C6.5 2.03998 2 6.52998 2 12.06C2 17.06 5.66 21.21 10.44 21.96V14.96H7.9V12.06H10.44V9.84998C10.44 7.33998 11.93 5.95998 14.22 5.95998C15.31 5.95998 16.45 6.14998 16.45 6.14998V8.61998H15.19C13.95 8.61998 13.56 9.38998 13.56 10.18V12.06H16.34L15.89 14.96H13.56V21.96C15.9164 21.5878 18.0622 20.3855 19.6099 18.57C21.1576 16.7546 22.0054 14.4456 22 12.06C22 6.52998 17.5 2.03998 12 2.03998Z" />
-                </svg>
+                <path d="M12 2.03998C6.5 2.03998 2 6.52998 2 12.06C2 17.06 5.66 21.21 10.44 21.96V14.96H7.9V12.06H10.44V9.84998C10.44 7.33998 11.93 5.95998 14.22 5.95998C15.31 5.95998 16.45 6.14998 16.45 6.14998V8.61998H15.19C13.95 8.61998 13.56 9.38998 13.56 10.18V12.06H16.34L15.89 14.96H13.56V21.96C15.9164 21.5878 18.0622 20.3855 19.6099 18.57C21.1576 16.7546 22.0054 14.4456 22 12.06C22 6.52998 17.5 2.03998 12 2.03998Z" />
+            </svg>
                 <svg fill="#000000" className="w-5 h-5" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink"
                     viewBox="-143 145 512 512" xmlSpace="preserve">
                     <path d="M329,145h-432c-22.1,0-40,17.9-40,40v432c0,22.1,17.9,40,40,40h432c22.1,0,40-17.9,40-40V185C369,162.9,351.1,145,329,145z

@@ -1,7 +1,6 @@
 {
   "extends": "@react-workshop/tsconfig/vite-react.json",
   "compilerOptions": {
-    "baseUrl": ".",
     "paths": {
       "@react-workshop/http-client": ["../../packages/http-client/src/index.ts"],
       "@react-workshop/ui/button": ["../../packages/ui/src/button/button.tsx"],

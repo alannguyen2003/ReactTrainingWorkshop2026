@@ -1,5 +1,5 @@
 import { axios } from "../../../api/client";
-import { ProductDetail } from "src/shared/types/product.types";
+import { ProductDetail } from "../../../shared/types/product.types";
 
 export const productDetailApi = {
     async getProduct(id: string): Promise<ProductDetail> {

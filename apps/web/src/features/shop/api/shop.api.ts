@@ -4,7 +4,8 @@ import { Product } from "../../../shared/types/product.types";
 
 export const shopApi = {
     async getProducts(): Promise<ApiResponse<Product[]>> {
-        const data = await axios.get<ApiResponse<Product[]>>("/c/abbb-80dc-4582-8e14");
+        //https://dummyjson.com/c/d91b-ae81-4118-9dd5
+        const data = await axios.get<ApiResponse<Product[]>>("/c/d91b-ae81-4118-9dd5");
         return data;
     }
 }

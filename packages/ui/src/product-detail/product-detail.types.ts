@@ -38,6 +38,11 @@ export type ProductDetailMetaProps = {
     tags: string[];
 }
 
+export type GalleryProps = {
+    active: string;
+    thumbnails: string[];
+}
+
 export type ProductDetailProps = {
     title: string;
     price: number;
@@ -49,4 +54,5 @@ export type ProductDetailProps = {
     sku: string;
     category: string;
     tags: string[];
+    gallery: GalleryProps;
 }

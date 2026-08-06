@@ -142,40 +142,40 @@ export function CardPrice({
 
 type CardFunctionProps = {
   className?: string;
-  addToCartHref: string;
+  viewHref: string;
 }
 
 export function CardFunction({
-  className,
+  viewHref,
   ...props
 }: Readonly<CardFunctionProps>) {
   return (
-    <a href="/"
-      className={cn("absolute inset-0 hidden place-items-center bg-[#3a3a3a]/70 group-hover:grid", className)}
+    <a href={"/shop/" + viewHref}
+      className={cn("absolute inset-0 hidden place-items-center bg-[#3a3a3a]/70 group-hover:grid")}
       {...props}>
       <div className="grid justify-items-center gap-6">
-        <a className="bg-white px-14 py-3 font-semibold text-brand" href="/">Add to cart</a>
+        <button type="button" className="bg-white px-14 py-3 font-semibold text-brand">Add to cart</button>
         <div className="flex gap-5 text-white">
-          <a href="/" className="inline-flex items-center">
+          <button type="button" className="inline-flex items-center">
             <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path fillRule="evenodd" clipRule="evenodd" d="M13.803 5.33333C13.803 3.49238 15.3022 2 17.1515 2C19.0008 2 20.5 3.49238 20.5 5.33333C20.5 7.17428 19.0008 8.66667 17.1515 8.66667C16.2177 8.66667 15.3738 8.28596 14.7671 7.67347L10.1317 10.8295C10.1745 11.0425 10.197 11.2625 10.197 11.4872C10.197 11.9322 10.109 12.3576 9.94959 12.7464L15.0323 16.0858C15.6092 15.6161 16.3473 15.3333 17.1515 15.3333C19.0008 15.3333 20.5 16.8257 20.5 18.6667C20.5 20.5076 19.0008 22 17.1515 22C15.3022 22 13.803 20.5076 13.803 18.6667C13.803 18.1845 13.9062 17.7255 14.0917 17.3111L9.05007 13.9987C8.46196 14.5098 7.6916 14.8205 6.84848 14.8205C4.99917 14.8205 3.5 13.3281 3.5 11.4872C3.5 9.64623 4.99917 8.15385 6.84848 8.15385C7.9119 8.15385 8.85853 8.64725 9.47145 9.41518L13.9639 6.35642C13.8594 6.03359 13.803 5.6896 13.803 5.33333Z" fill="#ffffff" />
             </svg>
             Share
-          </a>
-          <a href="/" className="inline-flex items-center">
+          </button>
+          <button type="button" className="inline-flex items-center">
             <svg className="w-6 h-6 text-white" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
               <g id="Arrow / Arrow_Left_Right">
                 <path id="Vector" d="M16 13L19 16M19 16L16 19M19 16H5M8 11L5 8M5 8L8 5M5 8H19" stroke="#ffffff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
               </g>
             </svg>
             <span>Compare</span>
-          </a>
-          <a href="/" className="inline-flex items-center">
+          </button>
+          <button type="button" className="inline-flex items-center">
             <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path fillRule="evenodd" clipRule="evenodd" d="M12 6.00019C10.2006 3.90317 7.19377 3.2551 4.93923 5.17534C2.68468 7.09558 2.36727 10.3061 4.13778 12.5772C5.60984 14.4654 10.0648 18.4479 11.5249 19.7369C11.6882 19.8811 11.7699 19.9532 11.8652 19.9815C11.9483 20.0062 12.0393 20.0062 12.1225 19.9815C12.2178 19.9532 12.2994 19.8811 12.4628 19.7369C13.9229 18.4479 18.3778 14.4654 19.8499 12.5772C21.6204 10.3061 21.3417 7.07538 19.0484 5.17534C16.7551 3.2753 13.7994 3.90317 12 6.00019Z" stroke="#ffffff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
             Like
-          </a>
+          </button>
         </div>
       </div>
     </a>

@@ -10,6 +10,7 @@ export interface Product {
     rating: number;
     shortDescription: string;
     tags: string[];
+    href: string;
 }
 
 export interface ProductDetail {
@@ -29,6 +30,7 @@ export interface ProductDetail {
     sizes: Size[];
     colors: Color[];
     actions: object;
+    meta: Meta;
     tabs: Tab[];
     relatedProducts: RelatedProduct[];
 }

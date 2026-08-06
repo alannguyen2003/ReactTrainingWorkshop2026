@@ -1,6 +1,14 @@
 import { cn } from "../../../lib/util";
 
-export function FilterSection() {
+type FilterSectionProps = {
+    numberOfItems: number,
+    totalNumberOfItems: number
+};
+
+export function FilterSection({
+    numberOfItems,
+    totalNumberOfItems
+}: Readonly<FilterSectionProps>) {
     return (
         <section className="bg-beige py-8">
             <div
@@ -32,7 +40,7 @@ export function FilterSection() {
                         <rect id="_Transparent_Rectangle_" data-name="&lt;Transparent Rectangle&gt;" className="cls-1" fill="none" width="32" height="32" transform="translate(32) rotate(90)"/>
                     </svg>
                     <span className="h-9 w-px bg-[#9f9f9f]"></span>
-                    <span>Showing 1-16 of 32 results</span>
+                    <span>Showing 1-{numberOfItems} of {totalNumberOfItems} results</span>
                 </div>
                 <div className="flex flex-wrap items-center gap-7">
                     <label className="flex items-center gap-4">
@@ -41,7 +49,7 @@ export function FilterSection() {
                             id="number"
                             type="number"
                             className="h-[55px] w-[55px] bg-white text-center text-xl text-muted"
-                            placeholder="16" />
+                            placeholder="25" />
                     </label>
                     <label className="flex items-center gap-4">
                         <span>Sort by</span>

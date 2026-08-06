@@ -11,7 +11,9 @@ export function ShopPage() {
     return (
         <>
             <Breadcrumb />
-            <FilterSection />
+            <FilterSection 
+                numberOfItems={products.length} 
+                totalNumberOfItems={products.length}/>
             <ProductsSection products={products} />
             <PaginationBar currentPage={1} lastPage={1} />
             <BenefitSection />
