@@ -18,7 +18,9 @@ export function ProductRelatedSection({
                 </h2>
                 <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
                     {relatedProducts.map((item) => (
-                        <ProductCard key={item.id} name={item.name}
+                        <ProductCard 
+                            id={item.id}
+                            key={item.id} name={item.name}
                             shortDescription={item.name}
                             price={132}
                             originalPrice={132}

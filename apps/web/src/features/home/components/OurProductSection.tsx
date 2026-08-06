@@ -1,6 +1,6 @@
 import { Button } from "@react-workshop/ui/button";
 import { ProductCard } from "../../../shared/components/ProductCard";
-import { Product } from "src/shared/types/product.types";
+import { Product } from "../../../shared/types/product.types";
 import { ProductCardVariant } from "@react-workshop/ui/card";
 
 export type OurProductsType = {
@@ -18,12 +18,15 @@ export function OurProductSection({
                 </h2>
                 <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
                     {products.map((item) => (
-                        <ProductCard key={item.id} name={item.name}
+                        <ProductCard 
+                            id={item.id}
+                            key={item.id} name={item.name}
                             shortDescription={item.shortDescription}
                             price={item.price}
                             originalPrice={item.originalPrice}
                             thumbnail={item.thumbnail}
-                            badge={item.badge as ProductCardVariant} />
+                            badge={item.badge as ProductCardVariant}
+                            href="/" />
                     ))}
                 </div>
             </div>

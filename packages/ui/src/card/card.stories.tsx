@@ -35,7 +35,7 @@ const meta: Meta<typeof Card> = {
                         slashPrice={10000000}
                     />
                 </div>
-                <CardFunction addToCartHref="#"/>
+                <CardFunction viewHref="/"/>
                 
             </>
         )
