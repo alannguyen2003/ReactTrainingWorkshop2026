@@ -24,6 +24,10 @@ export function App() {
               path={publicRoutes.productDetail.path} 
               element={publicRoutes.productDetail.element}
             />
+            <Route
+              path={publicRoutes.about.path} 
+              element={publicRoutes.about.element}
+            />
           </Route>
 
           <Route element={<PublicLayout/> }>

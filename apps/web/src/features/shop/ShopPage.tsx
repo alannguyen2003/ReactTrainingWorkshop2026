@@ -10,7 +10,7 @@ export function ShopPage() {
     const products = productsResponse?.items ?? [];
     return (
         <>
-            <Breadcrumb />
+            <Breadcrumb title="Shop" />
             <FilterSection 
                 numberOfItems={products.length} 
                 totalNumberOfItems={products.length}/>

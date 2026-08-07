@@ -3,6 +3,7 @@ import { HomePage } from "../../features/home/HomePage";
 import { NotFoundPage } from "../../pages/NotFoundPage";
 import { ShopPage } from "../../features/shop/ShopPage";
 import { ProductDetailPage } from "../../features/product-detail/ProductDetailPage";
+import { AboutPage } from "../../features/about/AboutPage";
 
 export type AppRoute = {
     path: string;
@@ -29,6 +30,12 @@ export const publicRoutes = {
         label: "product-detail",
         title: "Product Detail",
         element: <ProductDetailPage/>
+    },
+    about: {
+        path: "/about",
+        label: "About us",
+        title: "About Us",
+        element: <AboutPage/>
     },
     notFound: {
         path: "*",
